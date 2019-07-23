@@ -1,0 +1,25 @@
+{
+  "name": "sso",
+  "version": "1.0.0",
+  "description": "This project implements the sso",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashbharadwaj/SingleSignOn.git"
+  },
+  "author": "Akash Bharadwaj, Prathik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akashbharadwaj/SingleSignOn/issues"
+  },
+  "homepage": "https://github.com/akashbharadwaj/SingleSignOn#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0"
+  }
+}
