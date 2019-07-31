@@ -9,8 +9,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 const port = 3000;
-
-app.get('/',(req,res)=>{
+app.use(cors());
+app.post('/',(req,res)=>{
 	res.send("hey there");
 });
 

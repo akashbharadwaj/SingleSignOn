@@ -11,7 +11,7 @@ export class UserService {
   userLogin(login) {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/api/Users', login, {headers})
+    return this.http.post('http://localhost:3000/login', login, {headers})
       .pipe(map(res => res.json()));
   }
 }
