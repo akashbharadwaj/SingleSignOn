@@ -8,6 +8,12 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended: false}));
 
-const PORT = process.env.PORT || 5000;
+const port = 3000;
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.get('/',(req,res)=>{
+	res.send("hey there");
+});
+
+app.listen(port,()=>{
+	console.log("Server started at port "+port);
+} );
