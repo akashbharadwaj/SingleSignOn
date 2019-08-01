@@ -9,9 +9,9 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   userLogin(login) {
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/login', login, {headers})
-      .pipe(map(res => res.json()));
+    // const headers = new HttpHeaders();
+    // headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/login', login);
+      // .pipe(map((res: Response) => res.json));
   }
 }
