@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl} from '@angular/forms';
 import { MyserviceService } from '../myservice.service';
 import { Router } from '@angular/router';
+import { Globals } from '../global';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  constructor(private myservice: MyserviceService, private router: Router) {
+  constructor(private myservice: MyserviceService, private router: Router, private global: Globals) {
     this.loginForm = new FormGroup({
       username: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
@@ -19,9 +20,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (localStorage.getItem('token') !== '' || localStorage.getItem('token') !== undefined) {
-      this.router.navigate(['/dashboard']);
-    }
+    // if (localStorage.getItem('token') !== '' || localStorage.getItem('token') !== undefined) {
+    //   this.router.navigate(['/dashboard']);
+    // }
   }
 
   isValid(controlName) {
@@ -34,6 +35,7 @@ export class LoginComponent implements OnInit {
         this.myservice.login(this.loginForm.value)
         .subscribe (
           data => {
+            this.global.status = true;
             console.log(data);
             localStorage.setItem('token', data.toString());
             this.router.navigate(['/dashboard']);

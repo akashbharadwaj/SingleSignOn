@@ -12,6 +12,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MyserviceService } from './myservice.service';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
+import { RouterModule, Routes } from '@angular/router';
+import { Globals } from './global';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,7 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [MyserviceService],
+  providers: [MyserviceService, Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
